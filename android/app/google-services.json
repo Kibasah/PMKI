@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "816571150051",
+    "project_id": "panduan-media-kreatif-islam",
+    "storage_bucket": "panduan-media-kreatif-islam.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:816571150051:android:8581daec05d33685c09fd6",
+        "android_client_info": {
+          "package_name": "com.example.pmki"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCP7B0e7IWl4NjajtOrzT1cn7X9SiSNGns"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
