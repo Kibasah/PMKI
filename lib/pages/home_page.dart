@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:pmki/pages/login_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:pmki/pages/info.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -47,7 +48,7 @@ class _HomePageState extends State<HomePage> {
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
-            expandedHeight: 300,
+            expandedHeight: 150,
             backgroundColor: Color.fromARGB(155, 247, 239, 204),
             flexibleSpace: FlexibleSpaceBar(
               background: Container(
@@ -63,7 +64,7 @@ class _HomePageState extends State<HomePage> {
               'Laman Utama',
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 29,
+                  fontSize: 25,
                   fontWeight: FontWeight.bold,
                 ),
                 textAlign: TextAlign.left, // Align text to the left
@@ -72,7 +73,10 @@ class _HomePageState extends State<HomePage> {
             ),
             actions: [
               IconButton(
-                icon: Icon(Icons.menu),
+                icon: Icon(
+                  Icons.menu,
+                  color: Colors.white, // Set the color of the icon to white
+                ),
                 onPressed: () {
                   _scaffoldKey.currentState?.openEndDrawer();
                 },
@@ -142,24 +146,32 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             ListTile(
+              leading: Icon(Icons.feedback),
               title: Text('Maklum Balas'),
               onTap: () {
                 // Handle item 1 tap
               },
             ),
             ListTile(
+              leading: Icon(Icons.info), // Icon for the "Info" item
               title: Text('Info'),
               onTap: () {
-                // Handle item 2 tap
+                // Navigate to InfoPage
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => InfoPage()),
+                );
               },
             ),
             ListTile(
+              leading: Icon(Icons.privacy_tip),
               title: Text('Dasar Privasi'),
               onTap: () {
                 // Handle item 3 tap
               },
             ),
             ListTile(
+              leading: Icon(Icons.logout),
               title: Text('Logout'),
               onTap: () {
                 // Perform logout action here
@@ -177,30 +189,38 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget _buildRoundedButton(String text, String imagePath) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.transparent,
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Image.asset(
-            imagePath,
-            height: 200,
-            width: 200,
-            fit: BoxFit.cover,
-          ),
-          SizedBox(height: 10),
-          Text(
-            text,
-            style: TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
+  return LayoutBuilder(
+    builder: (context, constraints) {
+      double iconSize = constraints.maxWidth * 0.55; // Adjust the icon size dynamically
+      double textSize = constraints.maxWidth * 0.08; // Adjust the text size dynamically
+
+      return Container(
+        decoration: BoxDecoration(
+          color: Colors.transparent,
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              imagePath,
+              height: iconSize,
+              width: iconSize,
+              fit: BoxFit.cover,
             ),
-          ),
-        ],
-      ),
-    );
-  }
+            SizedBox(height: 10),
+            Text(
+              text,
+              style: TextStyle(
+                fontSize: textSize,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ],
+        ),
+      );
+    },
+  );
+}
+
 }

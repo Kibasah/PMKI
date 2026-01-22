@@ -166,118 +166,119 @@ Widget build(BuildContext context) {
           Center(
             child: Padding(
               padding: EdgeInsets.all(20.0),
-              child: Container(
-                padding: EdgeInsets.all(20.0),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20.0),
-                  color: Colors.white.withOpacity(0.8),
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    if (_imageFile != null) ...[
-                      Image.file(
-                        File(_imageFile!.path),
-                        height: 200,
-                        width: 200,
-                        fit: BoxFit.cover,
+              child: SingleChildScrollView(
+                // Wrap Column with SingleChildScrollView
+                child: Container(
+                  padding: EdgeInsets.all(20.0),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20.0),
+                    color: Colors.white.withOpacity(0.8),
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      SizedBox(
+                        height: 150,
+                        child: Image.asset(
+                          'assets/image_logo1.png',
+                          width: 300,
+                        ),
+                      ),
+                      TextFormField(
+                        focusNode: _nameFocus,
+                        controller: _nameController,
+                        decoration: InputDecoration(
+                          labelText: 'Name',
+                          border: OutlineInputBorder(),
+                          errorText: _nameErrorText,
+                        ),
+                        onChanged: (_) {
+                          _validateFields();
+                        },
                       ),
                       SizedBox(height: 20.0),
-                    ],
-                    TextFormField(
-                      focusNode: _nameFocus,
-                      controller: _nameController,
-                      decoration: InputDecoration(
-                        labelText: 'Name',
-                        border: OutlineInputBorder(),
-                        errorText: _nameErrorText,
+                      TextFormField(
+                        focusNode: _phoneNumberFocus,
+                        controller: _phoneNumberController,
+                        keyboardType: TextInputType.phone,
+                        decoration: InputDecoration(
+                          labelText: 'Phone Number',
+                          border: OutlineInputBorder(),
+                          errorText: _phoneErrorText,
+                        ),
+                        onChanged: (_) {
+                          _validateFields();
+                        },
                       ),
-                      onChanged: (_) {
-                        _validateFields();
-                      },
-                    ),
-                    SizedBox(height: 20.0),
-                  TextFormField(
-                    focusNode: _phoneNumberFocus,
-                    controller: _phoneNumberController,
-                    keyboardType: TextInputType.phone,
-                    decoration: InputDecoration(
-                      labelText: 'Phone Number',
-                      border: OutlineInputBorder(),
-                      errorText: _phoneErrorText,
-                    ),
-                    onChanged: (_) {
-                      _validateFields();
-                    },
+                      SizedBox(height: 20.0),
+                      TextFormField(
+                        focusNode: _emailFocus,
+                        controller: _emailController,
+                        keyboardType: TextInputType.emailAddress,
+                        decoration: InputDecoration(
+                          labelText: 'Email',
+                          border: OutlineInputBorder(),
+                          errorText: _emailErrorText,
+                        ),
+                        onChanged: (_) {
+                          _validateFields();
+                        },
+                      ),
+                      SizedBox(height: 20.0),
+                      TextFormField(
+                        focusNode: _passwordFocus,
+                        controller: _passwordController,
+                        obscureText: true,
+                        decoration: InputDecoration(
+                          labelText: 'Password',
+                          border: OutlineInputBorder(),
+                          errorText: _passwordErrorText,
+                        ),
+                        onChanged: (_) {
+                          _validateFields();
+                        },
+                      ),
+                      SizedBox(height: 20.0),
+                      ElevatedButton(
+                        onPressed: _pickImage,
+                        child: Text('Upload Profile Image'),
+                      ),
+                      SizedBox(height: 20.0),
+                      if (_imageFile != null) ...[
+                        Flexible(
+                          child: AspectRatio(
+                            aspectRatio: 1.0,
+                            child: Image.file(
+                              File(_imageFile!.path),
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                      ],
+                      SizedBox(height: 20.0),
+                      Text(
+                        _imageErrorText ?? '',
+                        style: TextStyle(color: Colors.red),
+                      ),
+                      SizedBox(height: 20.0),
+                      ElevatedButton(
+                        onPressed: () {
+                          _validateFields();
+                          _validateImage();
+                          if (_nameErrorText == null &&
+                              _phoneErrorText == null &&
+                              _emailErrorText == null &&
+                              _passwordErrorText == null &&
+                              _imageErrorText == null) {
+                            _registerWithEmailAndPassword();
+                          }
+                        },
+                        child: Text('Register'),
+                      ),
+                    ],
                   ),
-                  SizedBox(height: 20.0),
-                  TextFormField(
-                    focusNode: _emailFocus,
-                    controller: _emailController,
-                    keyboardType: TextInputType.emailAddress,
-                    decoration: InputDecoration(
-                      labelText: 'Email',
-                      border: OutlineInputBorder(),
-                      errorText: _emailErrorText,
-                    ),
-                    onChanged: (_) {
-                      _validateFields();
-                    },
-                  ),
-                  SizedBox(height: 20.0),
-                  TextFormField(
-                    focusNode: _passwordFocus,
-                    controller: _passwordController,
-                    obscureText: true,
-                    decoration: InputDecoration(
-                      labelText: 'Password',
-                      border: OutlineInputBorder(),
-                      errorText: _passwordErrorText,
-                    ),
-                    onChanged: (_) {
-                      _validateFields();
-                    },
-                  ),
-                  SizedBox(height: 20.0),
-                  ElevatedButton(
-                      onPressed: _pickImage,
-                      child: Text('Upload Profile Image'),
-                    ),
-                    SizedBox(height: 20.0),
-                    Text(
-                      _imageErrorText ?? '',
-                      style: TextStyle(color: Colors.red),
-                    ),
-                    SizedBox(height: 10.0),
-                    ElevatedButton(
-                      onPressed: () {
-                        _validateFields();
-                        _validateImage();
-                        if (_nameErrorText == null &&
-                            _phoneErrorText == null &&
-                            _emailErrorText == null &&
-                            _passwordErrorText == null &&
-                            _imageErrorText == null) {
-                          _registerWithEmailAndPassword();
-                        }
-                      },
-                      child: Text('Register'),
-                    ),
-                  ],
                 ),
-              ),
-            ),
-          ),
-          Positioned(
-            top: 50,
-            left: MediaQuery.of(context).size.width / 2 - 150, // Center horizontally
-            child: Transform.translate(
-              offset: Offset(0, 50), // Move 50 pixels up
-              child: Image.asset(
-                'assets/image_logo1.png', // Replace with your logo asset
-                width: 300,
-                height: 200,
               ),
             ),
           ),
@@ -286,4 +287,5 @@ Widget build(BuildContext context) {
     ),
   );
 }
+
 }

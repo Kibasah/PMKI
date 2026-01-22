@@ -71,100 +71,111 @@ class _LoginPageState extends State<LoginPage> {
     }
   }
 
-  void _goToRegisterPage(BuildContext context) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => RegisterPage()),
-    );
-  }
-
-  void _resetPassword(BuildContext context) {
-  Navigator.push(
+  void _goToRegisterPage(BuildContext context) async {
+  final result = await Navigator.push(
     context,
-    MaterialPageRoute(builder: (context) => ForgotPasswordPage()),
+    MaterialPageRoute(builder: (context) => RegisterPage()),
   );
+
+  // Handle the result from the RegisterPage if needed
+  if (result != null) {
+    // Handle any result if necessary
+    print('Result from RegisterPage: $result');
+  }
 }
 
 
-@override
+  void _resetPassword(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => ForgotPasswordPage()),
+    );
+  }
+
+  @override
 Widget build(BuildContext context) {
   return Scaffold(
-    appBar: AppBar(
-      title: Text('Login'),
-    ),
     body: Container(
+      height: MediaQuery.of(context).size.height,
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage('assets/background_image1.jpg'), // Replace with your image path
+          image: AssetImage('assets/background_image1.jpg'),
           fit: BoxFit.cover,
         ),
       ),
-      child: Center(
-        child: Padding(
-          padding: EdgeInsets.all(20.0),
-          child: Container(
-            padding: EdgeInsets.all(20.0),
-            decoration: BoxDecoration(
-              color: Colors.white.withOpacity(0.8),
-              borderRadius: BorderRadius.circular(15.0),
-              
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Column(
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(height: 40.0), // Add some space at the top
+            Padding(
+              padding: EdgeInsets.all(20.0),
+              child: Container(
+                width: MediaQuery.of(context).size.width * 1,
+                height: MediaQuery.of(context).size.height * 0.9,
+                padding: EdgeInsets.all(20.0),
+                decoration: BoxDecoration(
+                  color: Colors.white.withOpacity(0.8),
+                  borderRadius: BorderRadius.circular(15.0),
+                ),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
                   children: [
-                    Image.asset(
-                      'assets/image_logo1.png', // Replace with your image path
-                      height: 200, // Set the height as needed
-                      width: 200, // Set the width as needed
-                      fit: BoxFit.cover,
+                    Padding(
+                      padding: EdgeInsets.only(top: 40.0),
+                      child: Image.asset(
+                        'assets/image_logo1.png',
+                        height: 100,
+                        width: 250,
+                        fit: BoxFit.cover,
+                      ),
                     ),
-                    SizedBox(height: 150.0), // Space between the image and email field
+                    SizedBox(height: 70.0),
+                    Padding(
+                      padding: EdgeInsets.only(top: 20.0),
+                      child: TextFormField(
+                        controller: _emailController,
+                        keyboardType: TextInputType.emailAddress,
+                        decoration: InputDecoration(
+                          labelText: 'Email',
+                          border: OutlineInputBorder(),
+                          errorText: _emailErrorText,
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 9.0),
+                    TextFormField(
+                      controller: _passwordController,
+                      obscureText: true,
+                      decoration: InputDecoration(
+                        labelText: 'Password',
+                        border: OutlineInputBorder(),
+                        errorText: _passwordErrorText,
+                      ),
+                    ),
+                    SizedBox(height: 10.0),
+                    TextButton(
+                      onPressed: () => _resetPassword(context),
+                      child: Text('Forgot Password?'),
+                    ),
+                    SizedBox(height: 20.0),
+                    Container(
+                      width: double.infinity,
+                      child: ElevatedButton(
+                        onPressed: () => _signInWithEmailAndPassword(context),
+                        child: Text('Login'),
+                      ),
+                    ),
+                    SizedBox(height: 10.0),
+                    TextButton(
+                      onPressed: () => _goToRegisterPage(context),
+                      child: Text('Register'),
+                    ),
+                    SizedBox(height: 20.0),
                   ],
                 ),
-                Padding(
-                  padding: EdgeInsets.only(top: 20.0), // Add padding top to the email field
-                  child: TextFormField(
-                    controller: _emailController,
-                    keyboardType: TextInputType.emailAddress,
-                    decoration: InputDecoration(
-                      labelText: 'Email',
-                      border: OutlineInputBorder(),
-                      errorText: _emailErrorText,
-                    ),
-                  ),
-                ),
-                // Remaining code remains the same...
-                SizedBox(height: 8.0),
-                TextFormField(
-                  controller: _passwordController,
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    labelText: 'Password',
-                    border: OutlineInputBorder(),
-                    errorText: _passwordErrorText,
-                  ),
-                ),
-                SizedBox(height: 10.0), // Space between Login and Forgot Password
-                TextButton(
-                  onPressed: () => _resetPassword(context),
-                  child: Text('Forgot Password?'),
-                ),
-                SizedBox(height: 20.0),
-                ElevatedButton(
-                  onPressed: () => _signInWithEmailAndPassword(context),
-                  child: Text('Login'),
-                ),
-                SizedBox(height: 10.0), // Add space between Login and Register text
-                TextButton(
-                  onPressed: () => _goToRegisterPage(context),
-                  child: Text('Register'),
-                ),
-              ],
+              ),
             ),
-          ),
+          ],
         ),
       ),
     ),
