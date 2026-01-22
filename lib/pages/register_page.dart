@@ -1,5 +1,6 @@
 // ignore_for_file: use_key_in_widget_constructors, library_private_types_in_public_api, prefer_final_fields, prefer_const_constructors, use_build_context_synchronously, avoid_print
 
+import 'dart:ui';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -7,7 +8,7 @@ import 'package:pmki/auth_service.dart'; // Import your AuthService
 import 'package:pmki/pages/home_page.dart'; // Import your home page widget
 import 'package:cloud_firestore/cloud_firestore.dart'; // Import Firestore
 import 'package:firebase_storage/firebase_storage.dart'; // Import Firebase Storage
-import 'package:image_picker/image_picker.dart'; // Import ImagePicker
+// import 'package:image_picker/image_picker.dart'; // Import ImagePicker
 
 class RegisterPage extends StatefulWidget {
   @override
@@ -23,7 +24,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
   FirebaseFirestore _firestore = FirebaseFirestore.instance;
   FirebaseStorage _storage = FirebaseStorage.instance;
-  File? _imageFile;
+// File? _imageFile;
 
   void _registerWithEmailAndPassword() async {
     String email = _emailController.text.trim();
@@ -45,6 +46,7 @@ class _RegisterPageState extends State<RegisterPage> {
             'phoneNumber': phoneNumber,
           });
 
+/*
           if (_imageFile != null) {
             // Upload image to Firebase Storage
             Reference ref = _storage.ref().child('profile_images').child('$uid.jpg');
@@ -56,6 +58,7 @@ class _RegisterPageState extends State<RegisterPage> {
               'profileImageUrl': imageUrl,
             });
           }
+*/
 
           // Registration successful, navigate to home page
           Navigator.pushReplacement(
@@ -74,6 +77,7 @@ class _RegisterPageState extends State<RegisterPage> {
   }
 
   Future<void> _pickImage() async {
+    /*
     final picker = ImagePicker();
     final pickedFile = await picker.pickImage(source: ImageSource.gallery);
     setState(() {
@@ -81,13 +85,14 @@ class _RegisterPageState extends State<RegisterPage> {
         _imageFile = File(pickedFile.path);
       }
     });
+    */
   }
 
   // FocusNodes for text fields
-  final FocusNode _nameFocus = FocusNode();
-  final FocusNode _phoneNumberFocus = FocusNode();
-  final FocusNode _emailFocus = FocusNode();
-  final FocusNode _passwordFocus = FocusNode();
+  // final FocusNode _nameFocus = FocusNode();
+  // final FocusNode _phoneNumberFocus = FocusNode();
+  // final FocusNode _emailFocus = FocusNode();
+  // final FocusNode _passwordFocus = FocusNode();
 
   // Validators for text fields
   String? _validateName(String? value) {
@@ -121,13 +126,13 @@ String? _validatePassword(String? value) {
   }
   return null;
 }
-String? _nameErrorText;
-String? _phoneErrorText;
-String? _emailErrorText;
-String? _passwordErrorText;
-String? _imageErrorText;
+  String? _nameErrorText;
+  String? _phoneErrorText;
+  String? _emailErrorText;
+  String? _passwordErrorText;
+  // String? _imageErrorText;
 
-void _validateFields() {
+  void _validateFields() {
   setState(() {
     _nameErrorText = _validateName(_nameController.text);
     _phoneErrorText = _validatePhoneNumber(_phoneNumberController.text);
@@ -136,25 +141,25 @@ void _validateFields() {
   });
 }
 
-void _validateImage() {
-  setState(() {
-    _imageErrorText = _imageFile == null ? 'Please upload an image' : null;
-  });
-}
+  void _validateImage() {
+    setState(() {
+      // _imageErrorText = null; // _imageFile == null ? 'Please upload an image' : null;
+    });
+  }
 
-@override
-Widget build(BuildContext context) {
-  return Scaffold(
-    appBar: AppBar(
-      title: Text('Register'),
-    ),
-    body: GestureDetector(
-      onTap: () {
-        // Dismiss keyboard when tapping outside the text field
-        FocusScope.of(context).unfocus();
-      },
-      child: Stack(
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        title: const Text('Daftar Akaun', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        iconTheme: const IconThemeData(color: Colors.white),
+      ),
+      body: Stack(
         children: [
+          // Background Image
           Container(
             decoration: BoxDecoration(
               image: DecorationImage(
@@ -162,130 +167,165 @@ Widget build(BuildContext context) {
                 fit: BoxFit.cover,
               ),
             ),
+            child: Container(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    Colors.black.withOpacity(0.4),
+                    Colors.black.withOpacity(0.6),
+                  ],
+                ),
+              ),
+            ),
           ),
-          Center(
-            child: Padding(
-              padding: EdgeInsets.all(20.0),
-              child: SingleChildScrollView(
-                // Wrap Column with SingleChildScrollView
-                child: Container(
-                  padding: EdgeInsets.all(20.0),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20.0),
-                    color: Colors.white.withOpacity(0.8),
+          SafeArea(
+            child: SingleChildScrollView(
+              padding: const EdgeInsets.all(24.0),
+              child: Column(
+                children: [
+                  const SizedBox(height: 20),
+                  Hero(
+                    tag: 'logo',
+                    child: Image.asset(
+                      'assets/image_logo1.png',
+                      height: 80,
+                    ),
                   ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      SizedBox(
-                        height: 150,
-                        child: Image.asset(
-                          'assets/image_logo1.png',
-                          width: 300,
-                        ),
-                      ),
-                      TextFormField(
-                        focusNode: _nameFocus,
-                        controller: _nameController,
-                        decoration: InputDecoration(
-                          labelText: 'Name',
-                          border: OutlineInputBorder(),
-                          errorText: _nameErrorText,
-                        ),
-                        onChanged: (_) {
-                          _validateFields();
-                        },
-                      ),
-                      SizedBox(height: 20.0),
-                      TextFormField(
-                        focusNode: _phoneNumberFocus,
-                        controller: _phoneNumberController,
-                        keyboardType: TextInputType.phone,
-                        decoration: InputDecoration(
-                          labelText: 'Phone Number',
-                          border: OutlineInputBorder(),
-                          errorText: _phoneErrorText,
-                        ),
-                        onChanged: (_) {
-                          _validateFields();
-                        },
-                      ),
-                      SizedBox(height: 20.0),
-                      TextFormField(
-                        focusNode: _emailFocus,
-                        controller: _emailController,
-                        keyboardType: TextInputType.emailAddress,
-                        decoration: InputDecoration(
-                          labelText: 'Email',
-                          border: OutlineInputBorder(),
-                          errorText: _emailErrorText,
-                        ),
-                        onChanged: (_) {
-                          _validateFields();
-                        },
-                      ),
-                      SizedBox(height: 20.0),
-                      TextFormField(
-                        focusNode: _passwordFocus,
-                        controller: _passwordController,
-                        obscureText: true,
-                        decoration: InputDecoration(
-                          labelText: 'Password',
-                          border: OutlineInputBorder(),
-                          errorText: _passwordErrorText,
-                        ),
-                        onChanged: (_) {
-                          _validateFields();
-                        },
-                      ),
-                      SizedBox(height: 20.0),
-                      ElevatedButton(
-                        onPressed: _pickImage,
-                        child: Text('Upload Profile Image'),
-                      ),
-                      SizedBox(height: 20.0),
-                      if (_imageFile != null) ...[
-                        Flexible(
-                          child: AspectRatio(
-                            aspectRatio: 1.0,
-                            child: Image.file(
-                              File(_imageFile!.path),
-                              fit: BoxFit.cover,
-                            ),
+                  const SizedBox(height: 40),
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(30),
+                    child: BackdropFilter(
+                      filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                      child: Container(
+                        padding: const EdgeInsets.all(32.0),
+                        decoration: BoxDecoration(
+                          color: Colors.white.withOpacity(0.1),
+                          borderRadius: BorderRadius.circular(30),
+                          border: Border.all(
+                            color: Colors.white.withOpacity(0.2),
+                            width: 1.5,
                           ),
                         ),
-                      ],
-                      SizedBox(height: 20.0),
-                      Text(
-                        _imageErrorText ?? '',
-                        style: TextStyle(color: Colors.red),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
+                            _buildModernInput(
+                              controller: _nameController,
+                              prefixIcon: Icons.person_outline,
+                              hint: 'Nama Penuh',
+                              errorText: _nameErrorText,
+                              onChanged: (_) => _validateFields(),
+                            ),
+                            const SizedBox(height: 16),
+                            _buildModernInput(
+                              controller: _phoneNumberController,
+                              prefixIcon: Icons.phone_android_outlined,
+                              hint: 'Nombor Telefon',
+                              keyboardType: TextInputType.phone,
+                              errorText: _phoneErrorText,
+                              onChanged: (_) => _validateFields(),
+                            ),
+                            const SizedBox(height: 16),
+                            _buildModernInput(
+                              controller: _emailController,
+                              prefixIcon: Icons.email_outlined,
+                              hint: 'E-mel',
+                              keyboardType: TextInputType.emailAddress,
+                              errorText: _emailErrorText,
+                              onChanged: (_) => _validateFields(),
+                            ),
+                            const SizedBox(height: 16),
+                            _buildModernInput(
+                              controller: _passwordController,
+                              prefixIcon: Icons.lock_outline,
+                              hint: 'Kata Laluan',
+                              obscureText: true,
+                              errorText: _passwordErrorText,
+                              onChanged: (_) => _validateFields(),
+                            ),
+                            const SizedBox(height: 32),
+                            ElevatedButton(
+                              onPressed: () {
+                                _validateFields();
+                                _validateImage();
+                                if (_nameErrorText == null &&
+                                    _phoneErrorText == null &&
+                                    _emailErrorText == null &&
+                                    _passwordErrorText == null) {
+                                  _registerWithEmailAndPassword();
+                                }
+                              },
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: const Color(0xFF2563EB),
+                                minimumSize: const Size(double.infinity, 56),
+                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+                              ),
+                              child: const Text(
+                                'Daftar Sekarang',
+                                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
-                      SizedBox(height: 20.0),
-                      ElevatedButton(
-                        onPressed: () {
-                          _validateFields();
-                          _validateImage();
-                          if (_nameErrorText == null &&
-                              _phoneErrorText == null &&
-                              _emailErrorText == null &&
-                              _passwordErrorText == null &&
-                              _imageErrorText == null) {
-                            _registerWithEmailAndPassword();
-                          }
-                        },
-                        child: Text('Register'),
-                      ),
-                    ],
+                    ),
                   ),
-                ),
+                  const SizedBox(height: 24),
+                  TextButton(
+                    onPressed: () => Navigator.pop(context),
+                    child: const Text(
+                      'Sudah mempunyai akaun? Log Masuk',
+                      style: TextStyle(color: Colors.white70),
+                    ),
+                  ),
+                ],
               ),
             ),
           ),
         ],
       ),
-    ),
-  );
-}
+    );
+  }
 
+  Widget _buildModernInput({
+    required TextEditingController controller,
+    required IconData prefixIcon,
+    required String hint,
+    bool obscureText = false,
+    TextInputType? keyboardType,
+    String? errorText,
+    Function(String)? onChanged,
+  }) {
+    return TextFormField(
+      controller: controller,
+      obscureText: obscureText,
+      keyboardType: keyboardType,
+      onChanged: onChanged,
+      style: const TextStyle(color: Colors.white),
+      decoration: InputDecoration(
+        hintText: hint,
+        hintStyle: const TextStyle(color: Colors.white60),
+        prefixIcon: Icon(prefixIcon, color: Colors.white60),
+        filled: true,
+        fillColor: Colors.white.withValues(alpha: 0.1),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(16),
+          borderSide: BorderSide.none,
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(16),
+          borderSide: BorderSide(color: Colors.white.withValues(alpha: 0.1)),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(16),
+          borderSide: const BorderSide(color: Color(0xFF2563EB), width: 2),
+        ),
+        errorText: errorText,
+        errorStyle: const TextStyle(color: Colors.orangeAccent),
+        contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+      ),
+    );
+  }
 }

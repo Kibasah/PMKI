@@ -3,53 +3,79 @@
 import 'package:flutter/material.dart';
 
 class InfoPage extends StatelessWidget {
+  const InfoPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Info'),
-        backgroundColor: Color.fromRGBO(248, 222, 198, 0.8),
+        title: const Text('Tentang Kami', style: TextStyle(fontWeight: FontWeight.bold)),
+        centerTitle: true,
       ),
-      body: Container(
-        decoration: BoxDecoration(
-          color: Color.fromRGBO(248, 222, 198, 0.8),
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(24.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            _buildInfoSection(
+              context,
+              title: 'I-CM (Media Kreatif Islam)',
+              content:
+                  'I-CM (Media Kreatif Islam) berfungsi sebagai alat yang boleh dirujuk dengan ciri-ciri interaktif yang mudah diakses.',
+              icon: Icons.lightbulb_outline,
+            ),
+            const SizedBox(height: 24),
+            _buildInfoSection(
+              context,
+              title: 'Maklumat Tambahan',
+              content:
+                  'Aplikasi ini merupakan inisiatif yang dibangunkan sebagai penyelesaian terhadap Islamic content bagi memenuhi keperluan komuniti Muslim.',
+              icon: Icons.info_outline,
+            ),
+          ],
         ),
-        child: Padding(
-          padding: EdgeInsets.all(20.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'I-CM (Media Kreatif Islam)',
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
+      ),
+    );
+  }
+
+  Widget _buildInfoSection(BuildContext context, {required String title, required String content, required IconData icon}) {
+    return Card( // Use global CardTheme
+      child: Padding(
+        padding: const EdgeInsets.all(24.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Container(
+                  padding: const EdgeInsets.all(12),
+                  decoration: BoxDecoration(
+                    color: Theme.of(context).primaryColor.withValues(alpha: 0.1),
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  child: Icon(icon, color: Theme.of(context).primaryColor, size: 28),
                 ),
-              ),
-              SizedBox(height: 20),
-              Text(
-                'I-CM (Media Kreatif Islam) berfungsi sebagai alat yang boleh dirujuk dengan ciri-ciri interaktif yang mudah diakses.',
-                style: TextStyle(
-                  fontSize: 16,
+                const SizedBox(width: 16),
+                Expanded(
+                  child: Text(
+                    title,
+                    style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                          color: Theme.of(context).colorScheme.onSurface,
+                        ),
+                  ),
                 ),
-              ),
-              SizedBox(height: 20),
-              Text(
-                'Maklumat Tambahan',
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              SizedBox(height: 10),
-              Text(
-                'Aplikasi ini merupakan inisiatif yang dibangunkan sebagai penyelesaian terhadap Islamic content bagi memenuhi keperluan komuniti Muslim.',
-                style: TextStyle(
-                  fontSize: 16,
-                ),
-              ),
-            ],
-          ),
+              ],
+            ),
+            const SizedBox(height: 20),
+            Text(
+              content,
+              style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                    color: Theme.of(context).colorScheme.onSurfaceVariant, // Use semantic colors
+                  ),
+            ),
+          ],
         ),
       ),
     );

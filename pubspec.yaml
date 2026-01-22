@@ -19,7 +19,7 @@ publish_to: "none" # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=3.2.1 <4.0.0"
+  sdk: ">=3.0.0 <4.0.0"
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -31,17 +31,21 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
-  firebase_core: ^2.24.1
-  cloud_firestore: ^4.13.5
-  firebase_auth: ^4.15.2
-  firebase_storage: ^11.5.5
-  image_picker: ^1.0.4
+  firebase_core: 2.23.0
+  cloud_firestore: 4.13.0
+  firebase_auth: 4.14.0
+  firebase_storage: 11.5.0
+#  image_picker: 1.0.0
   flutter_launcher_icons: ^0.13.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
+
+dependency_overrides:
+  leak_tracker_flutter_testing: 3.0.10
+  web: any
 
 flutter_launcher_icons:
   image_path: "assets/image_logo1.png"  # Replace this with your icon path

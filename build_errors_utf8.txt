@@ -1,0 +1,1045 @@
+﻿[ +104 ms] Artifact Instance of 'MaterialFonts' is not required, skipping update.
+[   +7 ms] Artifact Instance of 'GradleWrapper' is not required, skipping update.
+[        ] Artifact Instance of 'AndroidGenSnapshotArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'AndroidInternalBuildArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'IOSEngineArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'FlutterWebSdk' is not required, skipping update.
+[        ] Artifact Instance of 'LegacyCanvasKitRemover' is not required, skipping update.
+[        ] Artifact Instance of 'FlutterSdk' is not required, skipping update.
+[        ] Artifact Instance of 'WindowsEngineArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'MacOSEngineArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'LinuxEngineArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'LinuxFuchsiaSDKArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'MacOSFuchsiaSDKArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'FlutterRunnerSDKArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'FlutterRunnerDebugSymbols' is not required, skipping update.
+[        ] Artifact Instance of 'IosUsbArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'IosUsbArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'IosUsbArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'IosUsbArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'IosUsbArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'IosUsbArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'FontSubsetArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'PubDependencies' is not required, skipping update.
+[        ] executing: [C:\Users\abdul\OneDrive\Desktop\Projects\Panduan Media Kreatif Islam\flutter/] git -c log.showSignature=false log HEAD -n 1 --pretty=format:%ad --date=iso
+[  +62 ms] Exit code 0 from: git -c log.showSignature=false log HEAD -n 1 --pretty=format:%ad --date=iso
+[        ] 2023-12-05 19:46:39 -0800
+[  +30 ms] Artifact Instance of 'AndroidGenSnapshotArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'AndroidInternalBuildArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'IOSEngineArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'FlutterWebSdk' is not required, skipping update.
+[        ] Artifact Instance of 'FlutterEngineStamp' is not required, skipping update.
+[        ] Artifact Instance of 'LegacyCanvasKitRemover' is not required, skipping update.
+[   +4 ms] Artifact Instance of 'WindowsEngineArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'MacOSEngineArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'LinuxEngineArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'LinuxFuchsiaSDKArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'MacOSFuchsiaSDKArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'FlutterRunnerSDKArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'FlutterRunnerDebugSymbols' is not required, skipping update.
+[ +130 ms] Artifact Instance of 'AndroidGenSnapshotArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'AndroidInternalBuildArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'IOSEngineArtifacts' is not required, skipping update.
+[   +1 ms] Artifact Instance of 'FlutterEngineStamp' is not required, skipping update.
+[   +7 ms] Artifact Instance of 'WindowsEngineArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'MacOSEngineArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'LinuxEngineArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'LinuxFuchsiaSDKArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'MacOSFuchsiaSDKArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'FlutterRunnerSDKArtifacts' is not required, skipping update.
+[        ] Artifact Instance of 'FlutterRunnerDebugSymbols' is not required, skipping update.
+[ +197 ms] Launching lib\main.dart on Chrome in debug mode...
+[ +139 ms] Initializing file store
+[   +2 ms] Done initializing file store
+[  +12 ms] Skipping target: gen_localizations
+[   +1 ms] Skipping target: gen_dart_plugin_registrant
+[        ] Skipping target: _composite
+[   +1 ms] complete
+[        ] Updating assets
+[        ] runHooks() with {TargetFile: D:\Panduan PMKI\lib\main.dart, BuildMode: debug} and TargetPlatform.web_javascript
+[        ] runHooks() - will perform dart build
+[        ] Initializing file store
+[        ] Done initializing file store
+[  +10 ms] Skipping target: dart_build
+[        ] Persisting file store
+[   +1 ms] Done persisting file store
+[   +4 ms] runHooks() - done
+[ +155 ms] Waiting for connection from debug service on Chrome...
+[  +81 ms] Found plugin firebase_storage at C:\Users\abdul\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_storage-11.5.0\
+[   +5 ms] Found plugin firebase_storage_web at C:\Users\abdul\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_storage_web-3.6.14\
+[   +8 ms] Found plugin firebase_core at C:\Users\abdul\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_core-2.23.0\
+[   +1 ms] Found plugin firebase_core_web at C:\Users\abdul\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_core_web-2.10.0\
+[   +6 ms] Found plugin firebase_auth at C:\Users\abdul\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_auth-4.14.0\
+[   +1 ms] Found plugin firebase_auth_web at C:\Users\abdul\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_auth_web-5.8.8\
+[   +3 ms] Found plugin cloud_firestore at C:\Users\abdul\AppData\Local\Pub\Cache\hosted\pub.dev\cloud_firestore-4.13.0\
+[   +1 ms] Found plugin cloud_firestore_web at C:\Users\abdul\AppData\Local\Pub\Cache\hosted\pub.dev\cloud_firestore_web-3.8.6\
+[  +70 ms] shaderc command: [C:\Users\abdul\OneDrive\Desktop\Projects\Panduan Media Kreatif Islam\flutter\bin\cache\artifacts\engine\windows-x64\impellerc.exe, --sksl, --iplr, --json, --sl=build\flutter_assets\shaders/ink_sparkle.frag, --spirv=build\flutter_assets\shaders/ink_sparkle.frag.spirv, --input=C:\Users\abdul\OneDrive\Desktop\Projects\Panduan Media Kreatif Islam\flutter\packages\flutter\lib\src\material\shaders\ink_sparkle.frag, --input-type=frag, --include=C:\Users\abdul\OneDrive\Desktop\Projects\Panduan Media Kreatif Islam\flutter\packages\flutter\lib\src\material\shaders, --include=C:\Users\abdul\OneDrive\Desktop\Projects\Panduan Media Kreatif Islam\flutter\bin\cache\artifacts\engine\windows-x64\shader_lib]
+[   +1 ms] shaderc command: [C:\Users\abdul\OneDrive\Desktop\Projects\Panduan Media Kreatif Islam\flutter\bin\cache\artifacts\engine\windows-x64\impellerc.exe, --sksl, --iplr, --json, --sl=build\flutter_assets\shaders/stretch_effect.frag, --spirv=build\flutter_assets\shaders/stretch_effect.frag.spirv, --input=C:\Users\abdul\OneDrive\Desktop\Projects\Panduan Media Kreatif Islam\flutter\packages\flutter\lib\src\material\shaders\stretch_effect.frag, --input-type=frag, --include=C:\Users\abdul\OneDrive\Desktop\Projects\Panduan Media Kreatif Islam\flutter\packages\flutter\lib\src\material\shaders, --include=C:\Users\abdul\OneDrive\Desktop\Projects\Panduan Media Kreatif Islam\flutter\bin\cache\artifacts\engine\windows-x64\shader_lib]
+flutter : [ +342 ms] 
+Warning: In 
+index.html:37: Local 
+variable for "serviceW
+orkerVersion" is 
+deprecated. Use "{{flu
+tter_service_worker_ve
+rsion}}" template 
+token instead. See htt
+ps://docs.flutter.dev/
+platform-integration/w
+eb/initialization for 
+more details.
+At line:1 char:1
++ flutter run -d 
+chrome --no-pub 
+--verbose > build_erro
+rs_verbose.txt 2 ...
++ ~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+~~~~~
+    + CategoryInfo    
+          : NotSpeci  
+  fied: ([ +342 ms]   
+  Warn...r more de    
+tails.:String) []    
+, RemoteException
+    + FullyQualifiedE 
+   rrorId : NativeCo  
+  mmandError
+ 
+[   +1 ms] Warning: 
+In index.html:46: "Flu
+tterLoader.loadEntrypo
+int" is deprecated. 
+Use 
+"FlutterLoader.load" 
+instead. See https://d
+ocs.flutter.dev/platfo
+rm-integration/web/ini
+tialization for more 
+details.
+[        ] <- reset
+[   +6 ms] C:\Users\abdul\OneDrive\Desktop\Projects\Panduan Media Kreatif Islam\flutter\bin\cache\dart-sdk\bin\dartaotruntime.exe C:\Users\abdul\OneDrive\Desktop\Projects\Panduan Media Kreatif Islam\flutter\bin\cache\dart-sdk\bin\snapshots\frontend_server_aot.dart.snapshot --sdk-root C:\Users\abdul\OneDrive\Desktop\Projects\Panduan Media Kreatif Islam\flutter\bin\cache\flutter_web_sdk/ --incremental --target=dartdevc --experimental-emit-debug-metadata -DFLUTTER_VERSION=3.16.3 -DFLUTTER_CHANNEL=stable -DFLUTTER_GIT_URL=https://github.com/flutter/flutter.git -DFLUTTER_FRAMEWORK_REVISION=b0366e0a3f -DFLUTTER_ENGINE_REVISION=78fc3012e4 -DFLUTTER_DART_VERSION=3.10.7 --output-dill C:\Users\abdul\AppData\Local\Temp\flutter_tools.f2daf038\flutter_tool.cd74f28a\app.dill --packages D:\Panduan PMKI\.dart_tool\package_config.json -Ddart.vm.profile=false -Ddart.vm.product=false --enable-asserts --track-widget-creation --filesystem-root C:\Users\abdul\AppData\Local\Temp\flutter_tools.f2daf038\flutter_tools.63051255 --filesystem-scheme org-dartlang-app --initialize-from-dill build\a1ba19d344bcaa0adcf72a00b265b393.cache.dill.track.dill --platform file:///C:/Users/abdul/OneDrive/Desktop/Projects/Panduan%20Media%20Kreatif%20Islam/flutter/bin/cache/flutter_web_sdk/kernel/ddc_outline.dill --verbosity=error --dartdevc-canary --dartdevc-module-format=ddc
+[  +12 ms] <- compile org-dartlang-app:/web_entrypoint.dart
+[+1288 ms] lib/pages/r
+egister_page.dart:332:
+1: Error: Expected a 
+declaration, but got 
+'}'.
+[        ] }
+[        ] ^
+[ +122 ms] lib/pages/h
+ome_page.dart:282:87: 
+Error: Cannot invoke 
+a non-'const' 
+constructor where a 
+const expression is 
+expected.
+[        ] Try using 
+a constructor or 
+factory that is 
+'const'.
+[        ]            
+     Navigator.push(co
+ntext, MaterialPageRou
+te(builder: (context) 
+=> const InfoPage()));
+[        ]            
+                      
+                      
+                      
+         ^^^^^^^^
+[+16756 ms] Unhandled 
+exception:
+[        ] 
+Unsupported 
+operation: 
+Unsupported invalid 
+type InvalidType(<inva
+lid>) (InvalidType). 
+Encountered while 
+compiling file:///D:/P
+anduan%20PMKI/lib/page
+s/home_page.dart, 
+which contains the 
+type: FunctionType(<in
+valid> Function(BuildC
+ontext)).
+[        ] #0      Lib
+raryCompiler._typeComp
+ilationError (package:
+dev_compiler/src/kerne
+l/compiler_new.dart:44
+79)
+[        ] #1      Lib
+raryCompiler._emitType
+ (package:dev_compiler
+/src/kernel/compiler_n
+ew.dart:4444)
+[        ] #2      Lib
+raryCompiler._emitFunc
+tionTagged (package:de
+v_compiler/src/kernel/
+compiler_new.dart:4291
+)
+[        ] #3      Lib
+raryCompiler.visitFunc
+tionExpression (packag
+e:dev_compiler/src/ker
+nel/compiler_new.dart:
+8923)
+[        ] #4      Fun
+ctionExpression.accept
+ (package:kernel/src/a
+st/expressions.dart:46
+08)
+[        ] #5      Lib
+raryCompiler._visitExp
+ression (package:dev_c
+ompiler/src/kernel/com
+piler_new.dart:5146)
+[        ] #6      Lib
+raryCompiler._emitName
+dExpression (package:d
+ev_compiler/src/kernel
+/compiler_new.dart:806
+2)
+[        ] #7      Lib
+raryCompiler._emitArgu
+mentGroups (package:de
+v_compiler/src/kernel/
+compiler_new.dart:8052
+)
+[        ] #8      Lib
+raryCompiler._emitArgu
+mentList (package:dev_
+compiler/src/kernel/co
+mpiler_new.dart:8006)
+[        ] #9      Lib
+raryCompiler.visitCons
+tructorInvocation (pac
+kage:dev_compiler/src/
+kernel/compiler_new.da
+rt:8308)
+[        ] #10     Con
+structorInvocation.acc
+ept (package:kernel/sr
+c/ast/expressions.dart
+:2686)
+[        ] #11     Lib
+raryCompiler._visitExp
+ression (package:dev_c
+ompiler/src/kernel/com
+piler_new.dart:5146)
+[        ] #12     Lib
+raryCompiler._emitArgu
+mentGroups (package:de
+v_compiler/src/kernel/
+compiler_new.dart:8043
+)
+[        ] #13     Lib
+raryCompiler._emitArgu
+mentList (package:dev_
+compiler/src/kernel/co
+mpiler_new.dart:8006)
+[        ] #14     Lib
+raryCompiler.visitStat
+icInvocation.generateC
+all (package:dev_compi
+ler/src/kernel/compile
+r_new.dart:7709)
+[        ] #15     Lib
+raryCompiler.visitStat
+icInvocation (package:
+dev_compiler/src/kerne
+l/compiler_new.dart:77
+18)
+[        ] #16     Sta
+ticInvocation.accept (
+package:kernel/src/ast
+/expressions.dart:2602
+)
+[        ] #17     Lib
+raryCompiler._visitExp
+ression (package:dev_c
+ompiler/src/kernel/com
+piler_new.dart:5146)
+[        ] #18     Lib
+raryCompiler._emitHotR
+eloadChecksConditional
+ (package:dev_compiler
+/src/kernel/compiler_n
+ew.dart:7756)
+[        ] #19     Lib
+raryCompiler.visitStat
+icInvocation (package:
+dev_compiler/src/kerne
+l/compiler_new.dart:77
+16)
+[        ] #20     Sta
+ticInvocation.accept (
+package:kernel/src/ast
+/expressions.dart:2602
+)
+[        ] #21     Lib
+raryCompiler._visitExp
+ression (package:dev_c
+ompiler/src/kernel/com
+piler_new.dart:5146)
+[        ] #22     Lib
+raryCompiler.visitExpr
+essionStatement (packa
+ge:dev_compiler/src/ke
+rnel/compiler_new.dart
+:5234)
+[        ] #23     Exp
+ressionStatement.accep
+t (package:kernel/src/
+ast/statements.dart:50
+)
+[        ] #24     Lib
+raryCompiler._visitSta
+tement (package:dev_co
+mpiler/src/kernel/comp
+iler_new.dart:5043)
+[        ] #25     Map
+pedIterable.elementAt 
+(dart:_internal/iterab
+le.dart:402)
+[        ] #26     
+ListIterator.moveNext 
+(dart:_internal/iterab
+le.dart:371)
+[        ] #27     
+new _GrowableList._ofE
+fficientLengthIterable
+ (dart:core-patch/grow
+able_array.dart:194)
+[        ] #28     
+new _GrowableList.of (
+dart:core-patch/growab
+le_array.dart:154)
+[        ] #29     
+new List.of (dart:core
+-patch/array_patch.dar
+t:39)
+[        ] #30     
+SetBase.toList (dart:c
+ollection/set.dart:119
+)
+[        ] #31     Lib
+raryCompiler.visitBloc
+k (package:dev_compile
+r/src/kernel/compiler_
+new.dart:5256)
+[        ] #32     
+Block.accept (package:
+kernel/src/ast/stateme
+nts.dart:103)
+[        ] #33     Lib
+raryCompiler._visitSta
+tement (package:dev_co
+mpiler/src/kernel/comp
+iler_new.dart:5043)
+[        ] #34     Lib
+raryCompiler._emitFunc
+tionScopedBody (packag
+e:dev_compiler/src/ker
+nel/compiler_new.dart:
+5080)
+[        ] #35     Lib
+raryCompiler._emitFunc
+tion.<anonymous 
+closure> (package:dev_
+compiler/src/kernel/co
+mpiler_new.dart:4666)
+[        ] #36     Lib
+raryCompiler._withLetS
+cope (package:dev_comp
+iler/src/kernel/compil
+er_new.dart:3660)
+[        ] #37     Lib
+raryCompiler._withCurr
+entFunction (package:d
+ev_compiler/src/kernel
+/compiler_new.dart:484
+0)
+[        ] #38     Lib
+raryCompiler._emitFunc
+tion (package:dev_comp
+iler/src/kernel/compil
+er_new.dart:4658)
+[        ] #39     Lib
+raryCompiler._emitArro
+wFunction (package:dev
+_compiler/src/kernel/c
+ompiler_new.dart:8930)
+[        ] #40     Lib
+raryCompiler.visitFunc
+tionExpression (packag
+e:dev_compiler/src/ker
+nel/compiler_new.dart:
+8920)
+[        ] #41     Fun
+ctionExpression.accept
+ (package:kernel/src/a
+st/expressions.dart:46
+08)
+[        ] #42     Lib
+raryCompiler._visitExp
+ression (package:dev_c
+ompiler/src/kernel/com
+piler_new.dart:5146)
+[        ] #43     Lib
+raryCompiler._emitArgu
+mentGroups (package:de
+v_compiler/src/kernel/
+compiler_new.dart:8043
+)
+[        ] #44     Lib
+raryCompiler._emitArgu
+mentList (package:dev_
+compiler/src/kernel/co
+mpiler_new.dart:8006)
+[        ] #45     Lib
+raryCompiler.visitInst
+anceInvocation.generat
+eCall (package:dev_com
+piler/src/kernel/compi
+ler_new.dart:6600)
+[        ] #46     Lib
+raryCompiler.visitInst
+anceInvocation (packag
+e:dev_compiler/src/ker
+nel/compiler_new.dart:
+6620)
+[        ] #47     Ins
+tanceInvocation.accept
+ (package:kernel/src/a
+st/expressions.dart:17
+93)
+[        ] #48     Lib
+raryCompiler._visitExp
+ression (package:dev_c
+ompiler/src/kernel/com
+piler_new.dart:5146)
+[        ] #49     Map
+pedIterable.elementAt 
+(dart:_internal/iterab
+le.dart:402)
+[        ] #50     
+ListIterator.moveNext 
+(dart:_internal/iterab
+le.dart:371)
+[        ] #51     
+new _GrowableList._ofE
+fficientLengthIterable
+ (dart:core-patch/grow
+able_array.dart:194)
+[        ] #52     
+new _GrowableList.of (
+dart:core-patch/growab
+le_array.dart:154)
+[        ] #53     
+new List.of (dart:core
+-patch/array_patch.dar
+t:39)
+[        ] #54     
+SetBase.toList (dart:c
+ollection/set.dart:119
+)
+[        ] #55     Lib
+raryCompiler._visitExp
+ressionList (package:d
+ev_compiler/src/kernel
+/compiler_new.dart:510
+7)
+[        ] #56     Lib
+raryCompiler.visitList
+Literal (package:dev_c
+ompiler/src/kernel/com
+piler_new.dart:8771)
+[        ] #57     
+ListLiteral.accept (pa
+ckage:kernel/src/ast/e
+xpressions.dart:4162)
+[        ] #58     Lib
+raryCompiler._visitExp
+ression (package:dev_c
+ompiler/src/kernel/com
+piler_new.dart:5146)
+[        ] #59     Lib
+raryCompiler._emitName
+dExpression (package:d
+ev_compiler/src/kernel
+/compiler_new.dart:806
+2)
+[        ] #60     Lib
+raryCompiler._emitArgu
+mentGroups (package:de
+v_compiler/src/kernel/
+compiler_new.dart:8052
+)
+[        ] #61     Lib
+raryCompiler._emitArgu
+mentList (package:dev_
+compiler/src/kernel/co
+mpiler_new.dart:8006)
+[        ] #62     Lib
+raryCompiler.visitCons
+tructorInvocation (pac
+kage:dev_compiler/src/
+kernel/compiler_new.da
+rt:8308)
+[        ] #63     Con
+structorInvocation.acc
+ept (package:kernel/sr
+c/ast/expressions.dart
+:2686)
+[        ] #64     Lib
+raryCompiler._visitExp
+ression (package:dev_c
+ompiler/src/kernel/com
+piler_new.dart:5146)
+[        ] #65     Lib
+raryCompiler._emitName
+dExpression (package:d
+ev_compiler/src/kernel
+/compiler_new.dart:806
+2)
+[        ] #66     Lib
+raryCompiler._emitArgu
+mentGroups (package:de
+v_compiler/src/kernel/
+compiler_new.dart:8052
+)
+[        ] #67     Lib
+raryCompiler._emitArgu
+mentList (package:dev_
+compiler/src/kernel/co
+mpiler_new.dart:8006)
+[        ] #68     Lib
+raryCompiler.visitCons
+tructorInvocation (pac
+kage:dev_compiler/src/
+kernel/compiler_new.da
+rt:8308)
+[        ] #69     Con
+structorInvocation.acc
+ept (package:kernel/sr
+c/ast/expressions.dart
+:2686)
+[        ] #70     Lib
+raryCompiler._visitExp
+ression (package:dev_c
+ompiler/src/kernel/com
+piler_new.dart:5146)
+[        ] #71     Lib
+raryCompiler._emitName
+dExpression (package:d
+ev_compiler/src/kernel
+/compiler_new.dart:806
+2)
+[        ] #72     Lib
+raryCompiler._emitArgu
+mentGroups (package:de
+v_compiler/src/kernel/
+compiler_new.dart:8052
+)
+[        ] #73     Lib
+raryCompiler._emitArgu
+mentList (package:dev_
+compiler/src/kernel/co
+mpiler_new.dart:8006)
+[        ] #74     Lib
+raryCompiler.visitCons
+tructorInvocation (pac
+kage:dev_compiler/src/
+kernel/compiler_new.da
+rt:8308)
+[        ] #75     Con
+structorInvocation.acc
+ept (package:kernel/sr
+c/ast/expressions.dart
+:2686)
+[        ] #76     Lib
+raryCompiler._visitExp
+ression (package:dev_c
+ompiler/src/kernel/com
+piler_new.dart:5146)
+[        ] #77     Lib
+raryCompiler._emitName
+dExpression (package:d
+ev_compiler/src/kernel
+/compiler_new.dart:806
+2)
+[        ] #78     Lib
+raryCompiler._emitArgu
+mentGroups (package:de
+v_compiler/src/kernel/
+compiler_new.dart:8052
+)
+[        ] #79     Lib
+raryCompiler._emitArgu
+mentList (package:dev_
+compiler/src/kernel/co
+mpiler_new.dart:8006)
+[        ] #80     Lib
+raryCompiler.visitCons
+tructorInvocation (pac
+kage:dev_compiler/src/
+kernel/compiler_new.da
+rt:8308)
+[        ] #81     Con
+structorInvocation.acc
+ept (package:kernel/sr
+c/ast/expressions.dart
+:2686)
+[        ] #82     Lib
+raryCompiler._visitExp
+ression (package:dev_c
+ompiler/src/kernel/com
+piler_new.dart:5146)
+[        ] #83     Lib
+raryCompiler.visitRetu
+rnStatement (package:d
+ev_compiler/src/kernel
+/compiler_new.dart:590
+1)
+[        ] #84     Ret
+urnStatement.accept (p
+ackage:kernel/src/ast/
+statements.dart:1076)
+[        ] #85     Lib
+raryCompiler._visitSta
+tement (package:dev_co
+mpiler/src/kernel/comp
+iler_new.dart:5043)
+[        ] #86     Map
+pedIterable.elementAt 
+(dart:_internal/iterab
+le.dart:402)
+[        ] #87     
+ListIterator.moveNext 
+(dart:_internal/iterab
+le.dart:371)
+[        ] #88     
+new _GrowableList._ofE
+fficientLengthIterable
+ (dart:core-patch/grow
+able_array.dart:194)
+[        ] #89     
+new _GrowableList.of (
+dart:core-patch/growab
+le_array.dart:154)
+[        ] #90     
+new List.of (dart:core
+-patch/array_patch.dar
+t:39)
+[        ] #91     
+SetBase.toList (dart:c
+ollection/set.dart:119
+)
+[        ] #92     Lib
+raryCompiler.visitBloc
+k (package:dev_compile
+r/src/kernel/compiler_
+new.dart:5256)
+[        ] #93     
+Block.accept (package:
+kernel/src/ast/stateme
+nts.dart:103)
+[        ] #94     Lib
+raryCompiler._visitSta
+tement (package:dev_co
+mpiler/src/kernel/comp
+iler_new.dart:5043)
+[        ] #95     Lib
+raryCompiler._emitFunc
+tionScopedBody (packag
+e:dev_compiler/src/ker
+nel/compiler_new.dart:
+5080)
+[        ] #96     Lib
+raryCompiler._emitFunc
+tion.<anonymous 
+closure> (package:dev_
+compiler/src/kernel/co
+mpiler_new.dart:4666)
+[        ] #97     Lib
+raryCompiler._withLetS
+cope (package:dev_comp
+iler/src/kernel/compil
+er_new.dart:3660)
+[        ] #98     Lib
+raryCompiler._withCurr
+entFunction (package:d
+ev_compiler/src/kernel
+/compiler_new.dart:484
+0)
+[        ] #99     Lib
+raryCompiler._emitFunc
+tion (package:dev_comp
+iler/src/kernel/compil
+er_new.dart:4658)
+[        ] #100    Lib
+raryCompiler._emitMeth
+odDeclaration.<anonymo
+us closure> (package:d
+ev_compiler/src/kernel
+/compiler_new.dart:294
+0)
+[        ] #101    Lib
+raryCompiler._withMeth
+odDeclarationContext (
+package:dev_compiler/s
+rc/kernel/compiler_new
+.dart:4865)
+[        ] #102    Lib
+raryCompiler._emitMeth
+odDeclaration (package
+:dev_compiler/src/kern
+el/compiler_new.dart:2
+938)
+[        ] #103    Lib
+raryCompiler._emitClas
+sProperties (package:d
+ev_compiler/src/kernel
+/compiler_new.dart:287
+9)
+[        ] #104    Lib
+raryCompiler._emitClas
+sDeclaration (package:
+dev_compiler/src/kerne
+l/compiler_new.dart:14
+80)
+[        ] #105    Lib
+raryCompiler._emitClas
+s (package:dev_compile
+r/src/kernel/compiler_
+new.dart:1418)
+[        ] #106    
+List.forEach (dart:cor
+e-patch/growable_array
+.dart:428)
+[        ] #107    Lib
+raryCompiler._emitLibr
+ary (package:dev_compi
+ler/src/kernel/compile
+r_new.dart:1340)
+[        ] #108    Lib
+raryCompiler.emitLibra
+ry (package:dev_compil
+er/src/kernel/compiler
+_new.dart:954)
+[        ] #109    Lib
+raryBundleCompiler.emi
+tModule (package:dev_c
+ompiler/src/kernel/com
+piler_new.dart:165)
+[        ] #110    Inc
+rementalJavaScriptBund
+ler.compile (package:f
+rontend_server/src/jav
+ascript_bundle.dart:32
+4)
+[        ] #111    Fro
+ntendCompiler.writeJav
+aScriptBundle (package
+:frontend_server/front
+end_server.dart:909)
+[        ] 
+<asynchronous 
+suspension>
+[        ] #112    Fro
+ntendCompiler.compile 
+(package:frontend_serv
+er/frontend_server.dar
+t:715)
+[        ] 
+<asynchronous 
+suspension>
+[        ] #113    lis
+tenAndCompile.<anonymo
+us closure> (package:f
+rontend_server/fronten
+d_server.dart:1436)
+[        ] 
+<asynchronous 
+suspension>
+[ +140 ms] "flutter run" took 19,557ms.
+[  +79 ms] The Dart 
+compiler exited 
+unexpectedly.
+[        ] 
+           #0      
+throwToolExit (package
+:flutter_tools/src/bas
+e/common.dart:34:3)
+           #1      Def
+aultResidentCompiler._
+compile.<anonymous 
+closure> (package:flut
+ter_tools/src/compile.
+dart:899:15)
+           #2      
+_rootRun (dart:async/z
+one.dart:1517:47)
+           #3      
+_CustomZone.run (dart:
+async/zone.dart:1422:1
+9)
+           #4      _Cu
+stomZone.runGuarded (d
+art:async/zone.dart:13
+21:7)
+           #5      _Bu
+fferingStreamSubscript
+ion._sendDone.sendDone
+ (dart:async/stream_im
+pl.dart:434:13)
+           #6      _Bu
+fferingStreamSubscript
+ion._sendDone (dart:as
+ync/stream_impl.dart:4
+44:7)
+           #7      _Bu
+fferingStreamSubscript
+ion._close (dart:async
+/stream_impl.dart:333:
+7)
+           #8      _Si
+nkTransformerStreamSub
+scription._close (dart
+:async/stream_transfor
+mers.dart:91:11)
+           #9      _Ev
+entSinkWrapper.close (
+dart:async/stream_tran
+sformers.dart:21:11)
+           #10     _St
+ringAdapterSink.close 
+(dart:convert/string_c
+onversion.dart:241:11)
+           #11     _Li
+neSplitterSink.close (
+dart:convert/line_spli
+tter.dart:144:11)
+           #12     _Si
+nkTransformerStreamSub
+scription._handleDone 
+(dart:async/stream_tra
+nsformers.dart:136:24)
+           #13     
+_rootRun (dart:async/z
+one.dart:1517:47)
+           #14     
+_CustomZone.run (dart:
+async/zone.dart:1422:1
+9)
+           #15     _Cu
+stomZone.runGuarded (d
+art:async/zone.dart:13
+21:7)
+           #16     _Bu
+fferingStreamSubscript
+ion._sendDone.sendDone
+ (dart:async/stream_im
+pl.dart:434:13)
+           #17     _Bu
+fferingStreamSubscript
+ion._sendDone (dart:as
+ync/stream_impl.dart:4
+44:7)
+           #18     _Bu
+fferingStreamSubscript
+ion._close (dart:async
+/stream_impl.dart:333:
+7)
+           #19     _Si
+nkTransformerStreamSub
+scription._close (dart
+:async/stream_transfor
+mers.dart:91:11)
+           #20     _Ev
+entSinkWrapper.close (
+dart:async/stream_tran
+sformers.dart:21:11)
+           #21     _Ha
+ndlerEventSink.close (
+dart:async/stream_tran
+sformers.dart:258:12)
+           #22     _Si
+nkTransformerStreamSub
+scription._handleDone 
+(dart:async/stream_tra
+nsformers.dart:136:24)
+           #23     
+_rootRun (dart:async/z
+one.dart:1517:47)
+           #24     
+_CustomZone.run (dart:
+async/zone.dart:1422:1
+9)
+           #25     _Cu
+stomZone.runGuarded (d
+art:async/zone.dart:13
+21:7)
+           #26     _Bu
+fferingStreamSubscript
+ion._sendDone.sendDone
+ (dart:async/stream_im
+pl.dart:434:13)
+           #27     _Bu
+fferingStreamSubscript
+ion._sendDone (dart:as
+ync/stream_impl.dart:4
+44:7)
+           #28     _Bu
+fferingStreamSubscript
+ion._close (dart:async
+/stream_impl.dart:333:
+7)
+           #29     _Si
+nkTransformerStreamSub
+scription._close (dart
+:async/stream_transfor
+mers.dart:91:11)
+           #30     _Ev
+entSinkWrapper.close (
+dart:async/stream_tran
+sformers.dart:21:11)
+           #31     _St
+ringAdapterSink.close 
+(dart:convert/string_c
+onversion.dart:241:11)
+           #32     _Ut
+f8ConversionSink.close
+ (dart:convert/string_
+conversion.dart:301:20
+)
+           #33     _Co
+nverterStreamEventSink
+.close (dart:convert/c
+hunked_conversion.dart
+:79:18)
+           #34     _Si
+nkTransformerStreamSub
+scription._handleDone 
+(dart:async/stream_tra
+nsformers.dart:136:24)
+           #35     
+_rootRun (dart:async/z
+one.dart:1517:47)
+           #36     
+_CustomZone.run (dart:
+async/zone.dart:1422:1
+9)
+           #37     _Cu
+stomZone.runGuarded (d
+art:async/zone.dart:13
+21:7)
+           #38     _Bu
+fferingStreamSubscript
+ion._sendDone.sendDone
+ (dart:async/stream_im
+pl.dart:434:13)
+           #39     _Bu
+fferingStreamSubscript
+ion._sendDone (dart:as
+ync/stream_impl.dart:4
+44:7)
+           #40     _Bu
+fferingStreamSubscript
+ion._close (dart:async
+/stream_impl.dart:333:
+7)
+           #41     _Sy
+ncStreamControllerDisp
+atch._sendDone (dart:a
+sync/stream_controller
+.dart:806:19)
+           #42     _St
+reamController._closeU
+nchecked (dart:async/s
+tream_controller.dart:
+652:7)
+[        ] Running 3 shutdown hooks
+           #43     _St
+reamController.close (
+dart:async/stream_cont
+roller.dart:645:5)
+           #44     
+_Socket._onData (dart:
+io-patch/socket_patch.
+dart:2887:21)
+           #45     
+_rootRunUnary (dart:as
+ync/zone.dart:1546:13)
+           #46     
+_CustomZone.runUnary (
+dart:async/zone.dart:1
+429:19)
+           #47     _Cu
+stomZone.runUnaryGuard
+ed (dart:async/zone.da
+rt:1329:7)
+           #48     _Bu
+fferingStreamSubscript
+ion._sendData (dart:as
+ync/stream_impl.dart:3
+81:11)
+           #49     _Bu
+fferingStreamSubscript
+ion._add (dart:async/s
+tream_impl.dart:312:7)
+           #50     _Sy
+ncStreamControllerDisp
+atch._sendData (dart:a
+sync/stream_controller
+.dart:798:19)
+           #51     _St
+reamController._add (d
+art:async/stream_contr
+oller.dart:663:7)
+           #52     
+_StreamController.add 
+(dart:async/stream_con
+troller.dart:618:5)
+           #53     
+new 
+_RawSocket.<anonymous 
+closure> (dart:io-patc
+h/socket_patch.dart:23
+22:33)
+           #54     _Na
+tiveSocket.issueReadEv
+ent.issue (dart:io-pat
+ch/socket_patch.dart:1
+648:18)
+           #55     
+_microtaskLoop (dart:a
+sync/schedule_microtas
+k.dart:40:35)
+           #56     
+_startMicrotaskLoop (d
+art:async/schedule_mic
+rotask.dart:49:5)
+           #57     _ru
+nPendingImmediateCallb
+ack (dart:isolate-patc
+h/isolate_patch.dart:1
+27:13)
+           #58     _Ra
+wReceivePort._handleMe
+ssage (dart:isolate-pa
+tch/isolate_patch.dart
+:194:5)
+
+
+[   +4 ms] Waiting for connection from debug service on Chrome... (completed in 19.0s)
+[        ] Synced 0.0MB.
+[        ] Failed to 
+compile application.
+[        ] Shutdown hooks complete
+[  +92 ms] exiting with code 1

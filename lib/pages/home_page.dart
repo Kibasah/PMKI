@@ -1,10 +1,15 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:pmki/pages/login_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:pmki/pages/info.dart';
+import 'package:pmki/pages/karya_page.dart';
+import 'package:pmki/pages/penggiat_page.dart';
+import 'package:pmki/pages/khalayak_page.dart';
+import 'package:pmki/pages/media_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -43,184 +48,327 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(248, 222, 198, 0.8),
       key: _scaffoldKey,
+      backgroundColor: const Color(0xFFF8FAFC),
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
-            expandedHeight: 150,
-            backgroundColor: Color.fromARGB(155, 247, 239, 204),
+            expandedHeight: 200,
+            pinned: true,
+            stretch: true,
+            backgroundColor: const Color(0xFF1E3A8A),
             flexibleSpace: FlexibleSpaceBar(
-              background: Container(
-                decoration: BoxDecoration(
-                  color: Colors.orange,
-                  image: DecorationImage(
-                    image: AssetImage('assets/background_image.jpg'),
+              stretchModes: const [StretchMode.blurBackground, StretchMode.zoomBackground],
+              background: Stack(
+                fit: StackFit.expand,
+                children: [
+                  Image.asset(
+                    'assets/background_image.jpg',
                     fit: BoxFit.cover,
                   ),
-                ),
+                  Container(
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                        colors: [
+                          Colors.transparent,
+                          Colors.black.withOpacity(0.7),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
               ),
-              title: Text(
-              'Laman Utama',
+              title: const Text(
+                'Laman Utama',
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 25,
                   fontWeight: FontWeight.bold,
+                  fontSize: 22,
                 ),
-                textAlign: TextAlign.left, // Align text to the left
               ),
               centerTitle: false,
             ),
             actions: [
               IconButton(
-                icon: Icon(
-                  Icons.menu,
-                  color: Colors.white, // Set the color of the icon to white
-                ),
-                onPressed: () {
-                  _scaffoldKey.currentState?.openEndDrawer();
-                },
+                icon: const Icon(Icons.menu, color: Colors.white),
+                onPressed: () => _scaffoldKey.currentState?.openEndDrawer(),
               ),
             ],
           ),
-          SliverFillRemaining(
-          child: Padding(
-            padding: const EdgeInsets.all(25.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Center(
-                  child: Column(
-                    children: [
-                      CircleAvatar(
-                        backgroundImage: userProfileImageUrl.isNotEmpty
-                            ? NetworkImage(userProfileImageUrl) // Use NetworkImage for the user's profile image URL
-                            : AssetImage('assets/placeholder_image.jpg') as ImageProvider, // Use placeholder image if profileImageUrl is empty
-                        radius: 50,
-                      ),
-                      SizedBox(height: 10),
-                      Text(
-                        'Selamat Datang, $userName',
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.all(24.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  // Profile Section
+                  Container(
+                    padding: const EdgeInsets.all(20),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(24),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.05),
+                          blurRadius: 20,
+                          offset: const Offset(0, 10),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
+                    child: Row(
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.all(3),
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            gradient: const LinearGradient(
+                              colors: [Color(0xFF2563EB), Color(0xFFF59E0B)],
+                            ),
+                          ),
+                          child: CircleAvatar(
+                            radius: 35,
+                            backgroundImage: userProfileImageUrl.isNotEmpty
+                                ? NetworkImage(userProfileImageUrl)
+                                : const AssetImage('assets/placeholder_image.jpg') as ImageProvider,
+                          ),
+                        ),
+                        const SizedBox(width: 20),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Text(
+                                'Selamat Datang,',
+                                style: TextStyle(
+                                  color: Color(0xFF64748B),
+                                  fontSize: 14,
+                                ),
+                              ),
+                              Text(
+                                userName.isEmpty ? 'Pengguna' : userName,
+                                style: const TextStyle(
+                                  color: Color(0xFF0F172A),
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-                 
-                  SizedBox(height: 20),
+                  const SizedBox(height: 32),
+                  const Text(
+                    'Kategori Utama',
+                    style: TextStyle(
+                      color: Color(0xFF0F172A),
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  // Grid Section
                   GridView.count(
+                    physics: const NeverScrollableScrollPhysics(),
                     shrinkWrap: true,
                     crossAxisCount: 2,
                     crossAxisSpacing: 20,
                     mainAxisSpacing: 20,
+                    childAspectRatio: 0.8,
                     children: [
-                      _buildRoundedButton('Karya', 'assets/image1.png'),
-                      _buildRoundedButton('Penggiat Industri', 'assets/image2.png'),
-                      _buildRoundedButton('Khalayak', 'assets/image3.png'),
-                      _buildRoundedButton('Saluran Media', 'assets/image4.png'),
+                      _buildModernCard(
+                        context,
+                        'Karya',
+                        'assets/image1.png',
+                        const Color(0xFF2563EB), // Blue
+                        'Jelajahi karya kreatif',
+                      ),
+                      _buildModernCard(
+                        context,
+                        'Penggiat',
+                        'assets/image2.png',
+                        const Color(0xFFF59E0B), // Amber
+                        'Komuniti profesional',
+                      ),
+                      _buildModernCard(
+                        context,
+                        'Khalayak',
+                        'assets/image3.png',
+                        const Color(0xFF10B981), // Emerald
+                        'Sasaran audiens',
+                      ),
+                      _buildModernCard(
+                        context,
+                        'Media',
+                        'assets/image4.png',
+                        const Color(0xFF8B5CF6), // Violet
+                        'Saluran & Platform',
+                      ),
                     ],
                   ),
+                  const SizedBox(height: 40),
                 ],
               ),
             ),
           ),
         ],
       ),
-      endDrawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: [
-            DrawerHeader(
-              decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 243, 177, 33),
-              ),
-              child: Text(
-                'Lain-Lain',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 30,
-                ),
-              ),
-            ),
-            ListTile(
-              leading: Icon(Icons.feedback),
-              title: Text('Maklum Balas'),
-              onTap: () {
-                // Handle item 1 tap
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.info), // Icon for the "Info" item
-              title: Text('Info'),
-              onTap: () {
-                // Navigate to InfoPage
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => InfoPage()),
-                );
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.privacy_tip),
-              title: Text('Dasar Privasi'),
-              onTap: () {
-                // Handle item 3 tap
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.logout),
-              title: Text('Logout'),
-              onTap: () {
-                // Perform logout action here
-                // For instance, navigate back to the login page
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => LoginPage()),
-                );
-        },
+      endDrawer: _buildModernDrawer(),
+    );
+  }
+
+
+// ... (existing helper methods)
+
+  Widget _buildModernCard(BuildContext context, String title, String imagePath, Color accentColor, String subtitle) {
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(24),
+        boxShadow: [
+          BoxShadow(
+            color: accentColor.withValues(alpha: 0.08),
+            blurRadius: 24,
+            offset: const Offset(0, 12),
+            spreadRadius: 0,
+          ),
+        ],
       ),
-          ],
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          onTap: () {
+            if (title == 'Karya') {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const KaryaPage()));
+            } else if (title == 'Penggiat') {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const PenggiatPage()));
+            } else if (title == 'Khalayak') {
+               Navigator.push(context, MaterialPageRoute(builder: (context) => const KhalayakPage()));
+            } else if (title == 'Media') {
+               Navigator.push(context, MaterialPageRoute(builder: (context) => const MediaPage()));
+            }
+          },
+          borderRadius: BorderRadius.circular(24),
+          splashColor: accentColor.withValues(alpha: 0.1),
+          highlightColor: accentColor.withValues(alpha: 0.05),
+          child: Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Expanded(
+                  child: Container(
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: accentColor.withValues(alpha: 0.05),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    padding: const EdgeInsets.all(16),
+                    child: Image.asset(
+                      imagePath,
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 16),
+                Text(
+                  title,
+                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  subtitle,
+                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                    fontSize: 12,
+                    color: Colors.grey.shade500,
+                  ),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ],
+            ),
+          ),
         ),
       ),
     );
   }
 
-  Widget _buildRoundedButton(String text, String imagePath) {
-  return LayoutBuilder(
-    builder: (context, constraints) {
-      double iconSize = constraints.maxWidth * 0.55; // Adjust the icon size dynamically
-      double textSize = constraints.maxWidth * 0.08; // Adjust the text size dynamically
-
-      return Container(
-        decoration: BoxDecoration(
-          color: Colors.transparent,
-          borderRadius: BorderRadius.circular(10),
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset(
-              imagePath,
-              height: iconSize,
-              width: iconSize,
-              fit: BoxFit.cover,
+  Widget _buildModernDrawer() {
+    return Drawer(
+      backgroundColor: Colors.transparent,
+      child: BackdropFilter(
+        filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
+        child: Container(
+          decoration: BoxDecoration(
+            color: Colors.white.withOpacity(0.85),
+            borderRadius: const BorderRadius.only(
+              topLeft: Radius.circular(32),
+              bottomLeft: Radius.circular(32),
             ),
-            SizedBox(height: 10),
-            Text(
-              text,
-              style: TextStyle(
-                fontSize: textSize,
-                fontWeight: FontWeight.bold,
+          ),
+          child: Column(
+            children: [
+              DrawerHeader(
+                decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [Color(0xFF1E3A8A), Color(0xFF2563EB)],
+                  ),
+                  borderRadius: BorderRadius.only(topLeft: Radius.circular(32)),
+                ),
+                child: const Center(
+                  child: Text(
+                    'Menu Utama',
+                    style: TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold),
+                  ),
+                ),
               ),
-            ),
-          ],
+              const SizedBox(height: 20),
+              _buildDrawerItem(Icons.feedback_outlined, 'Maklum Balas', () {}),
+              _buildDrawerItem(Icons.info_outline, 'Tentang Kami', () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => InfoPage()));
+              }),
+              _buildDrawerItem(Icons.privacy_tip_outlined, 'Privasi', () {}),
+              const Spacer(),
+              const Divider(indent: 20, endIndent: 20),
+              _buildDrawerItem(Icons.logout, 'Log Keluar', () {
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => LoginPage()));
+              }, color: Colors.redAccent),
+              const SizedBox(height: 40),
+            ],
+          ),
         ),
-      );
-    },
-  );
+      ),
+    );
+  }
+
+  Widget _buildDrawerItem(IconData icon, String title, VoidCallback onTap, {Color? color}) {
+    return ListTile(
+      leading: Icon(icon, color: color ?? const Color(0xFF1E3A8A)),
+      title: Text(
+        title,
+        style: TextStyle(
+          color: color ?? const Color(0xFF1E3A8A),
+          fontWeight: FontWeight.w500,
+        ),
+      ),
+      onTap: onTap,
+    );
+  }
 }
 
+extension ColorExtension on Color {
+  Color darken([double amount = .1]) {
+    assert(amount >= 0 && amount <= 1);
+    final hsl = HSLColor.fromColor(this);
+    final hslDark = hsl.withLightness((hsl.lightness - amount).clamp(0.0, 1.0));
+    return hslDark.toColor();
+  }
 }
+

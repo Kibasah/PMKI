@@ -1,0 +1,627 @@
+﻿Launching lib\main.dart on Chrome in debug mode...
+Waiting for connection from debug service on Chrome...          
+flutter : Warning: In 
+index.html:37: Local 
+variable for "serviceW
+orkerVersion" is 
+deprecated. Use "{{flu
+tter_service_worker_ve
+rsion}}" template 
+token instead. See htt
+ps://docs.flutter.dev/
+platform-integration/w
+eb/initialization for 
+more details.
+At line:1 char:1
++ flutter run -d 
+chrome > 
+build_errors_2.txt 
+2>&1; powershell 
+-Command  ...
++ ~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+~~~~~
+    + CategoryInfo    
+          : NotSpeci  
+  fied: (Warning: I   
+ n ind...r more de    
+tails.:String) []    
+, RemoteException
+    + FullyQualifiedE 
+   rrorId : NativeCo  
+  mmandError
+ 
+Warning: In 
+index.html:46: "Flutte
+rLoader.loadEntrypoint
+" is deprecated. Use 
+"FlutterLoader.load" 
+instead. See https://d
+ocs.flutter.dev/platfo
+rm-integration/web/ini
+tialization for more 
+details.
+lib/pages/home_page.da
+rt:282:87: Error: 
+Cannot invoke a 
+non-'const' 
+constructor where a 
+const expression is 
+expected.
+Try using a 
+constructor or 
+factory that is 
+'const'.
+                Naviga
+tor.push(context, Mate
+rialPageRoute(builder:
+ (context) => const 
+InfoPage()));
+                      
+                      
+                      
+                    
+^^^^^^^^
+Unhandled exception:
+Unsupported 
+operation: 
+Unsupported invalid 
+type InvalidType(<inva
+lid>) (InvalidType). 
+Encountered while 
+compiling file:///D:/P
+anduan%20PMKI/lib/page
+s/home_page.dart, 
+which contains the 
+type: FunctionType(<in
+valid> Function(BuildC
+ontext)).
+#0      LibraryCompile
+r._typeCompilationErro
+r (package:dev_compile
+r/src/kernel/compiler_
+new.dart:4479)
+#1      LibraryCompile
+r._emitType (package:d
+ev_compiler/src/kernel
+/compiler_new.dart:444
+4)
+#2      LibraryCompile
+r._emitFunctionTagged 
+(package:dev_compiler/
+src/kernel/compiler_ne
+w.dart:4291)
+#3      LibraryCompile
+r.visitFunctionExpress
+ion (package:dev_compi
+ler/src/kernel/compile
+r_new.dart:8923)
+#4      FunctionExpres
+sion.accept (package:k
+ernel/src/ast/expressi
+ons.dart:4608)
+#5      LibraryCompile
+r._visitExpression (pa
+ckage:dev_compiler/src
+/kernel/compiler_new.d
+art:5146)
+#6      LibraryCompile
+r._emitNamedExpression
+ (package:dev_compiler
+/src/kernel/compiler_n
+ew.dart:8062)
+#7      LibraryCompile
+r._emitArgumentGroups 
+(package:dev_compiler/
+src/kernel/compiler_ne
+w.dart:8052)
+#8      LibraryCompile
+r._emitArgumentList (p
+ackage:dev_compiler/sr
+c/kernel/compiler_new.
+dart:8006)
+#9      LibraryCompile
+r.visitConstructorInvo
+cation (package:dev_co
+mpiler/src/kernel/comp
+iler_new.dart:8308)
+#10     ConstructorInv
+ocation.accept (packag
+e:kernel/src/ast/expre
+ssions.dart:2686)
+#11     LibraryCompile
+r._visitExpression (pa
+ckage:dev_compiler/src
+/kernel/compiler_new.d
+art:5146)
+#12     LibraryCompile
+r._emitArgumentGroups 
+(package:dev_compiler/
+src/kernel/compiler_ne
+w.dart:8043)
+#13     LibraryCompile
+r._emitArgumentList (p
+ackage:dev_compiler/sr
+c/kernel/compiler_new.
+dart:8006)
+#14     LibraryCompile
+r.visitStaticInvocatio
+n.generateCall (packag
+e:dev_compiler/src/ker
+nel/compiler_new.dart:
+7709)
+#15     LibraryCompile
+r.visitStaticInvocatio
+n (package:dev_compile
+r/src/kernel/compiler_
+new.dart:7718)
+#16     StaticInvocati
+on.accept (package:ker
+nel/src/ast/expression
+s.dart:2602)
+#17     LibraryCompile
+r._visitExpression (pa
+ckage:dev_compiler/src
+/kernel/compiler_new.d
+art:5146)
+#18     LibraryCompile
+r._emitHotReloadChecks
+Conditional (package:d
+ev_compiler/src/kernel
+/compiler_new.dart:775
+6)
+#19     LibraryCompile
+r.visitStaticInvocatio
+n (package:dev_compile
+r/src/kernel/compiler_
+new.dart:7716)
+#20     StaticInvocati
+on.accept (package:ker
+nel/src/ast/expression
+s.dart:2602)
+#21     LibraryCompile
+r._visitExpression (pa
+ckage:dev_compiler/src
+/kernel/compiler_new.d
+art:5146)
+#22     LibraryCompile
+r.visitExpressionState
+ment (package:dev_comp
+iler/src/kernel/compil
+er_new.dart:5234)
+#23     ExpressionStat
+ement.accept (package:
+kernel/src/ast/stateme
+nts.dart:50)
+#24     LibraryCompile
+r._visitStatement (pac
+kage:dev_compiler/src/
+kernel/compiler_new.da
+rt:5043)
+#25     MappedIterable
+.elementAt (dart:_inte
+rnal/iterable.dart:402
+)
+#26     
+ListIterator.moveNext 
+(dart:_internal/iterab
+le.dart:371)
+#27     new _GrowableL
+ist._ofEfficientLength
+Iterable (dart:core-pa
+tch/growable_array.dar
+t:194)
+#28     new 
+_GrowableList.of (dart
+:core-patch/growable_a
+rray.dart:154)
+#29     new List.of (d
+art:core-patch/array_p
+atch.dart:39)
+#30     
+SetBase.toList (dart:c
+ollection/set.dart:119
+)
+#31     LibraryCompile
+r.visitBlock (package:
+dev_compiler/src/kerne
+l/compiler_new.dart:52
+56)
+#32     Block.accept (
+package:kernel/src/ast
+/statements.dart:103)
+#33     LibraryCompile
+r._visitStatement (pac
+kage:dev_compiler/src/
+kernel/compiler_new.da
+rt:5043)
+#34     LibraryCompile
+r._emitFunctionScopedB
+ody (package:dev_compi
+ler/src/kernel/compile
+r_new.dart:5080)
+#35     LibraryCompile
+r._emitFunction.<anony
+mous closure> (package
+:dev_compiler/src/kern
+el/compiler_new.dart:4
+666)
+#36     LibraryCompile
+r._withLetScope (packa
+ge:dev_compiler/src/ke
+rnel/compiler_new.dart
+:3660)
+#37     LibraryCompile
+r._withCurrentFunction
+ (package:dev_compiler
+/src/kernel/compiler_n
+ew.dart:4840)
+#38     LibraryCompile
+r._emitFunction (packa
+ge:dev_compiler/src/ke
+rnel/compiler_new.dart
+:4658)
+#39     LibraryCompile
+r._emitArrowFunction (
+package:dev_compiler/s
+rc/kernel/compiler_new
+.dart:8930)
+#40     LibraryCompile
+r.visitFunctionExpress
+ion (package:dev_compi
+ler/src/kernel/compile
+r_new.dart:8920)
+#41     FunctionExpres
+sion.accept (package:k
+ernel/src/ast/expressi
+ons.dart:4608)
+#42     LibraryCompile
+r._visitExpression (pa
+ckage:dev_compiler/src
+/kernel/compiler_new.d
+art:5146)
+#43     LibraryCompile
+r._emitArgumentGroups 
+(package:dev_compiler/
+src/kernel/compiler_ne
+w.dart:8043)
+#44     LibraryCompile
+r._emitArgumentList (p
+ackage:dev_compiler/sr
+c/kernel/compiler_new.
+dart:8006)
+#45     LibraryCompile
+r.visitInstanceInvocat
+ion.generateCall (pack
+age:dev_compiler/src/k
+ernel/compiler_new.dar
+t:6600)
+#46     LibraryCompile
+r.visitInstanceInvocat
+ion (package:dev_compi
+ler/src/kernel/compile
+r_new.dart:6620)
+#47     InstanceInvoca
+tion.accept (package:k
+ernel/src/ast/expressi
+ons.dart:1793)
+#48     LibraryCompile
+r._visitExpression (pa
+ckage:dev_compiler/src
+/kernel/compiler_new.d
+art:5146)
+#49     MappedIterable
+.elementAt (dart:_inte
+rnal/iterable.dart:402
+)
+#50     
+ListIterator.moveNext 
+(dart:_internal/iterab
+le.dart:371)
+#51     new _GrowableL
+ist._ofEfficientLength
+Iterable (dart:core-pa
+tch/growable_array.dar
+t:194)
+#52     new 
+_GrowableList.of (dart
+:core-patch/growable_a
+rray.dart:154)
+#53     new List.of (d
+art:core-patch/array_p
+atch.dart:39)
+#54     
+SetBase.toList (dart:c
+ollection/set.dart:119
+)
+#55     LibraryCompile
+r._visitExpressionList
+ (package:dev_compiler
+/src/kernel/compiler_n
+ew.dart:5107)
+#56     LibraryCompile
+r.visitListLiteral (pa
+ckage:dev_compiler/src
+/kernel/compiler_new.d
+art:8771)
+#57     
+ListLiteral.accept (pa
+ckage:kernel/src/ast/e
+xpressions.dart:4162)
+#58     LibraryCompile
+r._visitExpression (pa
+ckage:dev_compiler/src
+/kernel/compiler_new.d
+art:5146)
+#59     LibraryCompile
+r._emitNamedExpression
+ (package:dev_compiler
+/src/kernel/compiler_n
+ew.dart:8062)
+#60     LibraryCompile
+r._emitArgumentGroups 
+(package:dev_compiler/
+src/kernel/compiler_ne
+w.dart:8052)
+#61     LibraryCompile
+r._emitArgumentList (p
+ackage:dev_compiler/sr
+c/kernel/compiler_new.
+dart:8006)
+#62     LibraryCompile
+r.visitConstructorInvo
+cation (package:dev_co
+mpiler/src/kernel/comp
+iler_new.dart:8308)
+#63     ConstructorInv
+ocation.accept (packag
+e:kernel/src/ast/expre
+ssions.dart:2686)
+#64     LibraryCompile
+r._visitExpression (pa
+ckage:dev_compiler/src
+/kernel/compiler_new.d
+art:5146)
+#65     LibraryCompile
+r._emitNamedExpression
+ (package:dev_compiler
+/src/kernel/compiler_n
+ew.dart:8062)
+#66     LibraryCompile
+r._emitArgumentGroups 
+(package:dev_compiler/
+src/kernel/compiler_ne
+w.dart:8052)
+#67     LibraryCompile
+r._emitArgumentList (p
+ackage:dev_compiler/sr
+c/kernel/compiler_new.
+dart:8006)
+#68     LibraryCompile
+r.visitConstructorInvo
+cation (package:dev_co
+mpiler/src/kernel/comp
+iler_new.dart:8308)
+#69     ConstructorInv
+ocation.accept (packag
+e:kernel/src/ast/expre
+ssions.dart:2686)
+#70     LibraryCompile
+r._visitExpression (pa
+ckage:dev_compiler/src
+/kernel/compiler_new.d
+art:5146)
+#71     LibraryCompile
+r._emitNamedExpression
+ (package:dev_compiler
+/src/kernel/compiler_n
+ew.dart:8062)
+#72     LibraryCompile
+r._emitArgumentGroups 
+(package:dev_compiler/
+src/kernel/compiler_ne
+w.dart:8052)
+#73     LibraryCompile
+r._emitArgumentList (p
+ackage:dev_compiler/sr
+c/kernel/compiler_new.
+dart:8006)
+#74     LibraryCompile
+r.visitConstructorInvo
+cation (package:dev_co
+mpiler/src/kernel/comp
+iler_new.dart:8308)
+#75     ConstructorInv
+ocation.accept (packag
+e:kernel/src/ast/expre
+ssions.dart:2686)
+#76     LibraryCompile
+r._visitExpression (pa
+ckage:dev_compiler/src
+/kernel/compiler_new.d
+art:5146)
+#77     LibraryCompile
+r._emitNamedExpression
+ (package:dev_compiler
+/src/kernel/compiler_n
+ew.dart:8062)
+#78     LibraryCompile
+r._emitArgumentGroups 
+(package:dev_compiler/
+src/kernel/compiler_ne
+w.dart:8052)
+#79     LibraryCompile
+r._emitArgumentList (p
+ackage:dev_compiler/sr
+c/kernel/compiler_new.
+dart:8006)
+#80     LibraryCompile
+r.visitConstructorInvo
+cation (package:dev_co
+mpiler/src/kernel/comp
+iler_new.dart:8308)
+#81     ConstructorInv
+ocation.accept (packag
+e:kernel/src/ast/expre
+ssions.dart:2686)
+#82     LibraryCompile
+r._visitExpression (pa
+ckage:dev_compiler/src
+/kernel/compiler_new.d
+art:5146)
+#83     LibraryCompile
+r.visitReturnStatement
+ (package:dev_compiler
+/src/kernel/compiler_n
+ew.dart:5901)
+#84     ReturnStatemen
+t.accept (package:kern
+el/src/ast/statements.
+dart:1076)
+#85     LibraryCompile
+r._visitStatement (pac
+kage:dev_compiler/src/
+kernel/compiler_new.da
+rt:5043)
+#86     MappedIterable
+.elementAt (dart:_inte
+rnal/iterable.dart:402
+)
+#87     
+ListIterator.moveNext 
+(dart:_internal/iterab
+le.dart:371)
+#88     new _GrowableL
+ist._ofEfficientLength
+Iterable (dart:core-pa
+tch/growable_array.dar
+t:194)
+#89     new 
+_GrowableList.of (dart
+:core-patch/growable_a
+rray.dart:154)
+#90     new List.of (d
+art:core-patch/array_p
+atch.dart:39)
+#91     
+SetBase.toList (dart:c
+ollection/set.dart:119
+)
+#92     LibraryCompile
+r.visitBlock (package:
+dev_compiler/src/kerne
+l/compiler_new.dart:52
+56)
+#93     Block.accept (
+package:kernel/src/ast
+/statements.dart:103)
+#94     LibraryCompile
+r._visitStatement (pac
+kage:dev_compiler/src/
+kernel/compiler_new.da
+rt:5043)
+#95     LibraryCompile
+r._emitFunctionScopedB
+ody (package:dev_compi
+ler/src/kernel/compile
+r_new.dart:5080)
+#96     LibraryCompile
+r._emitFunction.<anony
+mous closure> (package
+:dev_compiler/src/kern
+el/compiler_new.dart:4
+666)
+#97     LibraryCompile
+r._withLetScope (packa
+ge:dev_compiler/src/ke
+rnel/compiler_new.dart
+:3660)
+#98     LibraryCompile
+r._withCurrentFunction
+ (package:dev_compiler
+/src/kernel/compiler_n
+ew.dart:4840)
+#99     LibraryCompile
+r._emitFunction (packa
+ge:dev_compiler/src/ke
+rnel/compiler_new.dart
+:4658)
+#100    LibraryCompile
+r._emitMethodDeclarati
+on.<anonymous 
+closure> (package:dev_
+compiler/src/kernel/co
+mpiler_new.dart:2940)
+#101    LibraryCompile
+r._withMethodDeclarati
+onContext (package:dev
+_compiler/src/kernel/c
+ompiler_new.dart:4865)
+#102    LibraryCompile
+r._emitMethodDeclarati
+on (package:dev_compil
+er/src/kernel/compiler
+_new.dart:2938)
+#103    LibraryCompile
+r._emitClassProperties
+ (package:dev_compiler
+/src/kernel/compiler_n
+ew.dart:2879)
+#104    LibraryCompile
+r._emitClassDeclaratio
+n (package:dev_compile
+r/src/kernel/compiler_
+new.dart:1480)
+#105    LibraryCompile
+r._emitClass (package:
+dev_compiler/src/kerne
+l/compiler_new.dart:14
+18)
+#106    List.forEach (
+dart:core-patch/growab
+le_array.dart:428)
+#107    LibraryCompile
+r._emitLibrary (packag
+e:dev_compiler/src/ker
+nel/compiler_new.dart:
+1340)
+#108    LibraryCompile
+r.emitLibrary (package
+:dev_compiler/src/kern
+el/compiler_new.dart:9
+54)
+#109    LibraryBundleC
+ompiler.emitModule (pa
+ckage:dev_compiler/src
+/kernel/compiler_new.d
+art:165)
+#110    IncrementalJav
+aScriptBundler.compile
+ (package:frontend_ser
+ver/src/javascript_bun
+dle.dart:324)
+#111    FrontendCompil
+er.writeJavaScriptBund
+le (package:frontend_s
+erver/frontend_server.
+dart:909)
+<asynchronous 
+suspension>
+#112    FrontendCompil
+er.compile (package:fr
+ontend_server/frontend
+_server.dart:715)
+<asynchronous 
+suspension>
+#113    listenAndCompi
+le.<anonymous 
+closure> (package:fron
+tend_server/frontend_s
+erver.dart:1436)
+<asynchronous 
+suspension>
+The Dart compiler 
+exited unexpectedly.
+Waiting for connection from debug service on Chrome...             19.2s
+Failed to compile 
+application.
